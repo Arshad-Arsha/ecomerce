@@ -1,0 +1,10 @@
+.login,
+.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url('https://img.freepik.com/free-vector/modern-colorful-circle-background_1394-168.jpg?w=740&t=st=1702579834~exp=1702580434~hmac=7eebf0a7a88d7b0c97323351ca1f7dac4e60db38e73a74279fff20732831c8a0');
+  background-size: cover;
+  background-position: center center;
+}

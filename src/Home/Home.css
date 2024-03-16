@@ -1,0 +1,37 @@
+/* Table Styles */
+.table-container {
+    margin: 3rem;
+    overflow-x: auto;
+}
+
+/* Header Row Styles */
+th {
+    text-align: center;
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+/* Table Body Styles */
+tbody {
+    position: relative;
+    z-index: 1;
+}
+
+/* Modal Styles */
+.modal-header {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+    color: white;
+    z-index: 2;
+}
+
+.modal-body {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+
+
