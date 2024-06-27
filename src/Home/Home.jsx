@@ -70,7 +70,7 @@ const Home = () => {
         <Container>
           <Navbar.Brand href="/">
             <img
-              src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg?w=740&t=st=1703309781~exp=1703310381~hmac=f4131cb7f7d5acb49ecaf9a5e80f0011ac1922f37b3330d37937dbfc2c50a461"
+              src="https://www.freepik.com/free-photo/add-cart-buy-now-online-commerce-graphic-concept_17129061.htm#fromView=search&page=2&position=27&uuid=53d2f625-e1e9-489a-8a42-a5d3c1665dc2"
               alt="Logo"
               style={{ width: '80px', height: 'auto' }}
             />
