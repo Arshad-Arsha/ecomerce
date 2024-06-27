@@ -1,35 +1,36 @@
 
-import React, { useContext,useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
 import { FaTrash, FaEdit, FaInfoCircle, FaPlus } from 'react-icons/fa';
 import { Modal, Button, Navbar, Container } from 'react-bootstrap';
 import PaginationComponent from '../Add-Products/PaginationComponent';
 import { ProductContext } from '../App';
+import './Home.css';
 
 
 const Home = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate()
   const [showModal, setShowModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(10);
-  const {products, setProducts} = useContext(ProductContext)
+  const { products, setProducts } = useContext(ProductContext)
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [deleteProduct, setdeleteProduct] = useState([]);
-  
- console.log(products);
+
+  console.log(products);
 
   const handleDelete = (id) => {
     setdeleteProduct(id);
-    setShowDeleteModal(true); 
+    setShowDeleteModal(true);
     console.log(deleteProduct)
   };
 
   const handleDeleteproduct = () => {
     setProducts((prevproducts) => {
       const totalProduct = [...prevproducts];
-      return totalProduct.filter(product => product.id !== deleteProduct); 
+      return totalProduct.filter(product => product.id !== deleteProduct);
     });
     setShowDeleteModal(false);
   };
@@ -48,7 +49,7 @@ const Home = () => {
   console.log(products);
 
 
-  
+
 
   const handleCloseModal = () => {
     setShowModal(false);
@@ -79,8 +80,12 @@ const Home = () => {
       </Navbar>
 
       {/* Product List Header */}
-      <div style={{ position: 'sticky', top: '0', zIndex: '99', background: 'linear-gradient(to bottom, #0f2027, #203a43, #2c5364)', color: 'white' }}>
+      {/* <div style={{ position: 'sticky', top: '0', zIndex: '99', background: 'linear-gradient(to bottom, #0f2027, #203a43, #2c5364)', color: 'white' }}>
         <h1 style={{ textAlign: 'center', margin: '0', padding: '1rem 0' }}>PRODUCT LIST</h1>
+      </div> */}
+      <div class="sticky-header">
+      
+        <h1>PRODUCT LIST</h1>
       </div>
 
       {/* Product List Table */}
@@ -100,7 +105,7 @@ const Home = () => {
                 <th>Description</th>
                 <th>Image</th>
                 <th>Actions</th>
-              </tr> 
+              </tr>
             </thead>
             {/* Table Body */}
             <tbody>
@@ -116,10 +121,10 @@ const Home = () => {
                   <td>{product.description}</td>
                   <td><img src={product.images[0]} alt={product.title} style={{ width: '100px', height: '50px' }} /></td>
                   <td>
-                    <div style={{ display: 'flex', justifyContent: 'space-around' }}> 
-                             
+                    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+
                       <button onClick={() => handleDelete(product.id)}><FaTrash /></button>
-                      <button   style={{ }} variant="link" onClick={() => getSelected(product)}><FaEdit /></button>
+                      <button style={{}} variant="link" onClick={() => getSelected(product)}><FaEdit /></button>
                       <button onClick={() => handleInfo(product)}><FaInfoCircle /></button>
                     </div>
                   </td>
@@ -141,14 +146,14 @@ const Home = () => {
           </div>
         </div>
       </div>
-{/* Delete Modal */}
-  <Modal show={showDeleteModal} onHide={() => setShowDeleteModal(false)}>
-    <Modal.Body>Do You Want to Proceed?????</Modal.Body>
-    <Modal.Footer>   
-      <Button variant="secondary" onClick={() => setShowDeleteModal(false)}>Close</Button>         
-      <Button variant="primary" onClick={handleDeleteproduct}>Delete</Button>
-    </Modal.Footer>
-  </Modal>
+      {/* Delete Modal */}
+      <Modal show={showDeleteModal} onHide={() => setShowDeleteModal(false)}>
+        <Modal.Body>Do You Want to Proceed?????</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowDeleteModal(false)}>Close</Button>
+          <Button variant="primary" onClick={handleDeleteproduct}>Delete</Button>
+        </Modal.Footer>
+      </Modal>
 
       {/* Product Info Modal */}
       <Modal show={showModal} onHide={handleCloseModal}>

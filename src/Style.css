@@ -1,7 +1,12 @@
-
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* overflow: hidden; */
+}
 .login-main {
     height: 45.7rem;
-    background-image:  url("https://img.freepik.com/free-photo/touch-screen-technology-connects-modern-mobile-phone-users-generated-by-ai_188544-17120.jpg?t=st=1710569315~exp=1710572915~hmac=3c2423f9a94a23b7ca26f5149b064a575e9487ab829305455dac65bba9b4a0ff&w=1380");
+    background-image:  url("/public/shopping-cart-black-background-with-copy-space.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     transition: opacity 2s ease-in-out;

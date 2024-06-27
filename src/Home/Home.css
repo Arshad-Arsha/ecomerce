@@ -14,6 +14,21 @@ th {
     z-index: 2;
 }
 
+
+.sticky-header {
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+    background: linear-gradient(rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
+    color: white;
+  }
+  
+  .sticky-header h1 {
+    text-align: center;
+    margin: 0px;
+    padding: 1rem 0px;
+  }
+
 /* Table Body Styles */
 tbody {
     position: relative;
